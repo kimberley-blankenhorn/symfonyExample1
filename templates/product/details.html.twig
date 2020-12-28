@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container-fluid">
+    <div class="card bg-dark text-white content">
+        <div class="row">
+            <div class="col-5">
+                <img src="{{ product.image}}" class="img-fluid p-5"  alt="...">
+            </div>
+            <div class="card-body col-7 text-center">
+                <h3 class="card-title">{{ product.name }}</h3>
+                <ul class="text-white list-unstyled">
+                      
+                    
+                    <li>{{ product.price }}</li>
+                    <li>{{ product.location }}</li>
+                    <li>{{ product.date }}</li>
+                    <li>{{ product.time|date("g:i a") }}</li> 
+                    <li>{{ product.description}}</li>
+                </ul>
+                <p>**All events listed do not include the 5% booking fee </p>
+                <a href="/" class="btn btn-outline-info">Return to Main</a>
+                 
+            </div>    
+        </div>
+    </div> 
+</div> 
+{% endblock %}

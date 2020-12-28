@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('success') %}
+    {# <div class="alert alert-success"> #}
+        <script class="text-info bg-dark">alert("{{ message }}")</script>
+    {# </div> #}
+{% endfor %}
+<div class="container text-light">
+    <div class="row">
+        <div class="card col-4 bg-transparent text-center p-4 d-none d-lg-block border border-light">
+            <div>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-building text-center" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                </svg>
+            </div>
+            <h5 class="text-center">Walking Tours</h5>
+            <p class="text-center">We have several walking tours around the world. No matter where you are, we can find you a tour to explore the city!</p>
+        </div>
+
+        <div class="card col-4 bg-transparent text-center p-4 d-none d-lg-block border border-light">
+            <div>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                <path fill-rule="evenodd" d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                </svg>
+            </div>
+            <h5 class="text-center">Tasting Tours</h5>
+            <p class="text-center">Hungry? Want to taste local delicacies? We have organized tasting tours throughout the world. We will help you to discover food locally with experts at hand to guide you along the way.</p>
+        </div>
+
+        <div class="card col-4 bg-transparent text-center p-4 d-none d-lg-block border border-light">
+            <div>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-flower2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12a3 3 0 0 0-6 0c0 .073.01.155.03.247.544.241 1.091.638 1.598 1.084A2.987 2.987 0 0 1 8 5c.494 0 .96.12 1.372.331.507-.446 1.054-.843 1.598-1.084.02-.092.03-.174.03-.247zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+            </div>
+            <h5 class="text-center">Performances</h5>
+            <p class="text-center">Whether you prefer a live classical concert, rock concert, theater performances, or ballet...We have something for everyone! Contact us to find out more.</p>
+       </div>
+
+<div class="container my-5 bg-dark p-5 overflow-auto content rounded" style="height: 800px">
+<h1 class="text-center text-light">Events Available</h1>
+    <div class="row mt-3">
+        {% for product in  products %}
+            <div class="card ontop col-12 col-lg-5 m-3 mx-auto mt-5 bg-dark">
+                <img src="{{ product.image }}" class="card-img-top img-thumbnail mt-2" alt="..." style="height:50vh;">
+                <div class="card-body">
+                    
+                    <ul class="text-light list-unstyled text-center" >
+                        <li>{{ product.name }}</li>
+                        <li>{{ product.price }}</li>
+                        <li>{{ product.location}}</li>
+                        <li>{{ product.date}}</li>
+                        
+                    </ul>
+                    <div class="text-center">
+                        <a href="/details/{{product.id}}" class="btn btn-outline-info">description</a>
+                        <a href="/edit/{{product.id}}" class="btn btn-outline-light">edit</a>
+                        <a href="/delete/{{product.id}}" class="btn btn-outline-danger">delete</a>
+                    </div>
+                </div>
+            </div>
+                
+        {% endfor %}
+      </div>  
+    </div>     
+
+
+{% endblock %}
